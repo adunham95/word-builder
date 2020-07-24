@@ -23,7 +23,7 @@ const Letter = ({children}) => {
 }
 
 const ActiveLetter = ({i, children}) =>{
-    const [drag] = useDrag({
+    const [{isDragging}, drag] = useDrag({
         item: {type: ItemTypes.ACTIVE_LETTER, index: i},
         collect: monitor => ({
             isDragging: !!monitor.isDragging()
@@ -33,7 +33,7 @@ const ActiveLetter = ({i, children}) =>{
     return (
         <span
             ref={drag}
-            className={`letter-active`}
+            className={`letter-active ${isDragging}`}
         >
             {children}
         </span>

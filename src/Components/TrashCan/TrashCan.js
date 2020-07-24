@@ -8,7 +8,7 @@ export const Trashcan = () => {
 
     const {removeLetterByIndex} = useWord()
 
-    const [drop] = useDrop({
+    const [{ isOver },drop] = useDrop({
         accept: ItemTypes.ACTIVE_LETTER,
         drop: (item) => removeLetterByIndex(item.index),
         collect: monitor => ({
@@ -17,7 +17,7 @@ export const Trashcan = () => {
     })
 
     return (
-        <div ref={drop} className="trashCan">
+        <div ref={drop} className={`trashCan ${isOver?"over":""}`}>
             
         </div>
     )
