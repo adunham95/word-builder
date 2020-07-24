@@ -41,7 +41,7 @@ const useWord = () => {
 
         let currentWord = [...state.word]
 
-        currentWord.push(letter.replace("-",""))
+        currentWord.push(letter.replace("-","").toLowerCase())
 
         setState(state => ({
             ...state,
