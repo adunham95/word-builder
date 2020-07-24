@@ -5,10 +5,16 @@
     font-weight: bold;
     text-transform: lowercase;
     background-color: #f8dd9b;
+    margin: 5px;
     &.green{
-
+        background-color: #a5cd8b;
     }
-    &.red{
+    &.pink{
         background-color: #e59292;
+    }
+    &.white{
+        background-color: white;
+        color: #2e2e2e;
+        border-color: #2e2e2e;
     }
 }
