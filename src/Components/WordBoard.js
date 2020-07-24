@@ -1,7 +1,6 @@
 import React from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { useQuery } from '../Functions/Hooks/useQuery';
 import Letter from './Letter';
 import { LetterList } from './LetterList';
 
