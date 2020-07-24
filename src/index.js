@@ -2,16 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import { Board } from './Components/Board';
-import {observe} from "./Components/Game.js";
+import { WordBoard } from './Components/WordBoard';
+import { WordProvider } from './Context/WordContext';
 
+let root = document.getElementById('root');
 
-observe((knightPosition)=> 
-  ReactDOM.render(
-    <Board knightPosition={knightPosition}/>,
-    document.getElementById('root')
-  )
-) 
+ReactDOM.render(
+  <WordProvider><WordBoard/></WordProvider>,
+  root
+)
 
 
 serviceWorker.unregister();
