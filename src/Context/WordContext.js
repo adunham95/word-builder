@@ -4,7 +4,8 @@ const WordContext = React.createContext([{},()=>{}]);
 
 const WordProvider = (props) => {
   const [state, setState] = useState({
-      word: []
+      word: [],
+      matchesWord: false,
   });
   return (
       <WordContext.Provider value={[state, setState]}>

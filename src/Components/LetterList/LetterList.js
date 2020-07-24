@@ -7,7 +7,7 @@ import { ActiveLetter } from '../Letter/Letter'
 
 export const LetterList = ({letters}) => {
 
-    const {addLetterToWord, word} = useWord()
+    const {addLetterToWord, word, matchesWord} = useWord()
 
     const [{ isOver }, drop] = useDrop({
         accept: ItemTypes.LETTER,
@@ -19,7 +19,7 @@ export const LetterList = ({letters}) => {
 
     return (
         <div ref={drop}
-        className="wordDrop">
+        className={`wordDrop ${matchesWord?"matchesWord":""}`}>
               {isOver && (
         <div
                 className="wordDrop-over"
