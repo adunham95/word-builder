@@ -1,5 +1,3 @@
-import React from "react";
-
 export function useQuery(){
     const urlParams = new URLSearchParams(window.location.search);
     let urlData = {}
