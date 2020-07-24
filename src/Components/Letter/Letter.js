@@ -22,4 +22,23 @@ const Letter = ({children}) => {
     )
 }
 
+const ActiveLetter = ({i, children}) =>{
+    const [{isDragging}, drag] = useDrag({
+        item: {type: ItemTypes.ACTIVE_LETTER, index: i},
+        collect: monitor => ({
+            isDragging: !!monitor.isDragging()
+        })
+    })
+
+    return (
+        <span
+            ref={drag}
+            className={`letter-active`}
+        >
+            {children}
+        </span>
+    )
+}
+
 export default Letter
+export {ActiveLetter}

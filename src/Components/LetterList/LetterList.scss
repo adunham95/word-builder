@@ -1,8 +1,15 @@
 .wordDrop{
     position:relative;
-    width: 100%;
+    width: calc(100% - 10px);
     height: 100%;
     min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    border: 5px solid green;
+    margin-top: 10px;
     &-over{
         position: absolute;
         top: 0;
@@ -12,5 +19,11 @@
         z-index: 1;
         opacity: 0.5;
         background-color: yellow;
+    }
+    &:empty {
+        &:after{
+            content: "Drop Letters Here";
+            font-size: 0.75em;
+        }
     }
 }

@@ -4,6 +4,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import Letter from '../Letter/Letter';
 import { LetterList } from '../LetterList/LetterList';
 import "./WordBoard.scss"
+import { Trashcan } from '../TrashCan/TrashCan';
 
 function renderLetters(i, letter){
   return(
@@ -31,6 +32,7 @@ export const WordBoard = ({word}) => {
           {renderedAlphabet}
         </div>
         <LetterList/>
+        <Trashcan/>
     </DndProvider>
   )
 }

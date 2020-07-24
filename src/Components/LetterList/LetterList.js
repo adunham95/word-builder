@@ -2,6 +2,8 @@ import React from 'react'
 import { useDrop } from 'react-dnd'
 import { ItemTypes } from '../Constants'
 import useWord from '../../Functions/Hooks/useWord'
+import "./LetterList.scss"
+import { ActiveLetter } from '../Letter/Letter'
 
 export const LetterList = ({letters}) => {
 
@@ -17,29 +19,13 @@ export const LetterList = ({letters}) => {
 
     return (
         <div ref={drop}
-        className="wordDrop"
-        style={{
-            position: 'relative',
-            width: '100%',
-            height: '100%',
-            minHeight: "100px",
-          }}>
+        className="wordDrop">
               {isOver && (
         <div
                 className="wordDrop-over"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            height: '100%',
-            width: '100%',
-            zIndex: 1,
-            opacity: 0.5,
-            backgroundColor: 'yellow',
-          }}
         />
       )}
-            {word.map(l => <span>{l}</span>)}
+            {word.map((l,i) => <ActiveLetter index={i}>{l}</ActiveLetter>)}
         </div>
     )
 }
