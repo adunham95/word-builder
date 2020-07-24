@@ -4,6 +4,7 @@ import { ItemTypes } from '../Constants'
 import useWord from '../../Functions/Hooks/useWord'
 import "./LetterList.scss"
 import { ActiveLetter } from '../Letter/Letter'
+import { Confetti } from '../Confetti/Confetti'
 
 export const LetterList = ({letters}) => {
 
@@ -25,6 +26,7 @@ export const LetterList = ({letters}) => {
                 className="wordDrop-over"
         />
       )}
+      {matchesWord && <Confetti/>}
             {word.map((l,i) => <ActiveLetter index={i}>{l}</ActiveLetter>)}
         </div>
     )

@@ -9,8 +9,6 @@ const useWord = () => {
     function checkIfMatchesWord(array){
         const thereWord = array.join('');
 
-        console.log(queryData.word.toLowerCase() === thereWord.toLowerCase())
-
         if(typeof queryData.word === "undefined"){
             return false
         }
