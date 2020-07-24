@@ -7,6 +7,10 @@
     background-color: #f8dd9b;
     margin: 5px;
     cursor: grab;
+    min-width: 1.25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &.dragging{
         cursor: grabbing;
     }
