@@ -8,9 +8,9 @@ import { Trashcan } from '../TrashCan/TrashCan';
 import letterData from "../../Data/letters.json"
 import { useQuery } from '../../Functions/Hooks/useQuery';
 
-function renderLetters(i, letter){
+function renderLetters(i, letter, className){
   return(
-    <Letter key={i}>
+    <Letter key={i} className={className}>
       {letter}
   </Letter>
   )
@@ -33,7 +33,7 @@ export const WordBoard = () => {
   const renderedAlphabet = []
 
   for (let i = 0; i < alphabet.length; i++) {
-    renderedAlphabet.push(renderLetters(i, alphabet[i].letter))
+    renderedAlphabet.push(renderLetters(i, alphabet[i].letter, alphabet[i].color))
 }
 
   return (
