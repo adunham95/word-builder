@@ -6,7 +6,7 @@ export const Confetti = () => {
     const generateConfetti = () => {
         const renderedConfetti = []
         for (let i = 0; i < 149; i++) {
-             renderedConfetti.push(<ConfettiItem i={i}/>)
+             renderedConfetti.push(<ConfettiItem key={`confetti-${i}`} i={i}/>)
         }
         return renderedConfetti
     }
