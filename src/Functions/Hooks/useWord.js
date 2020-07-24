@@ -9,7 +9,7 @@ const useWord = () => {
     function checkIfMatchesWord(array){
         const thereWord = array.join('');
 
-        console.log(queryData.word)
+        // console.log(queryData.word)
 
         if(typeof queryData.word === "undefined"){
             return false
@@ -33,7 +33,8 @@ const useWord = () => {
 
         setState(state => ({
             ...state,
-            word: currentWord
+            word: currentWord,
+            matchesWord: checkIfMatchesWord(currentWord)
         }));
     }
 
