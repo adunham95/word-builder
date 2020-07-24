@@ -6,6 +6,10 @@
     text-transform: lowercase;
     background-color: #f8dd9b;
     margin: 5px;
+    cursor: grab;
+    &.dragging{
+        cursor: grabbing;
+    }
     &.green{
         background-color: #a5cd8b;
     }
