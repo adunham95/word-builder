@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDrop } from 'react-dnd'
-import { ItemTypes } from './Constants'
-import useWord from '../Functions/Hooks/useWord'
+import { ItemTypes } from '../Constants'
+import useWord from '../../Functions/Hooks/useWord'
 
 export const LetterList = ({letters}) => {
 
@@ -17,6 +17,7 @@ export const LetterList = ({letters}) => {
 
     return (
         <div ref={drop}
+        className="wordDrop"
         style={{
             position: 'relative',
             width: '100%',
@@ -25,6 +26,7 @@ export const LetterList = ({letters}) => {
           }}>
               {isOver && (
         <div
+                className="wordDrop-over"
           style={{
             position: 'absolute',
             top: 0,

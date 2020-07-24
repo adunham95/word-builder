@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDrag } from 'react-dnd'
-import { ItemTypes } from './Constants'
+import { ItemTypes } from '../Constants'
+import "./Letter.scss"
 
 const Letter = ({children}) => {
 
@@ -14,12 +15,7 @@ const Letter = ({children}) => {
     return (
         <div
             ref={drag}
-            style={{
-                opacity: isDragging ? 0.5 : 1,
-                fontSize: 25,
-                fontWeight: 'bold',
-                cursor: 'move',
-              }}
+            className={`${isDragging?"dragging":""} letter `}
         >
             {children}
         </div>
