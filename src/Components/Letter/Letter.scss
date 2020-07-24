@@ -1,8 +1,14 @@
 .letter{
     padding: 10px;
-    background: blue;
-    color: white;
+    color: black;
     font-size: 2em;
     font-weight: bold;
     text-transform: lowercase;
+    background-color: #f8dd9b;
+    &.green{
+
+    }
+    &.red{
+        background-color: #e59292;
+    }
 }
