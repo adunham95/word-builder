@@ -27,6 +27,7 @@ const useWord = () => {
 
 
     function removeLetterByIndex(index){
+        console.log(index);
         let currentWord = [...state.word]
 
         currentWord.splice(index, 1);

@@ -27,7 +27,7 @@ export const LetterList = () => {
         />
       )}
       {matchesWord && <Confetti/>}
-            {word.map((l,i) => <ActiveLetter index={i} key={`live-letter-${l}-${i}`}>{l}</ActiveLetter>)}
+            {word.map((l,i) => <ActiveLetter i={i} key={`live-letter-${l}-${i}`}>{l}</ActiveLetter>)}
         </div>
     )
 }
