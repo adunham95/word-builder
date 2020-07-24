@@ -25,7 +25,7 @@
     }
     &:empty {
         &:after{
-            content: "Drop Letters Here";
+            content: "Drag Letters Here";
             font-size: 0.75em;
         }
     }
