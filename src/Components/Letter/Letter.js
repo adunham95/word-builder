@@ -3,7 +3,7 @@ import { useDrag } from 'react-dnd'
 import { ItemTypes } from '../Constants'
 import "./Letter.scss"
 
-const Letter = ({children}) => {
+const Letter = ({children, className}) => {
 
     const [{isDragging}, drag] = useDrag({
         item: {type: ItemTypes.LETTER, letter: children},
@@ -15,7 +15,7 @@ const Letter = ({children}) => {
     return (
         <div
             ref={drag}
-            className={`${isDragging?"dragging":""} letter `}
+            className={`${isDragging?"dragging":""} letter ${className}`}
         >
             {children}
         </div>
