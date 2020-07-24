@@ -8,7 +8,7 @@ export const Trashcan = () => {
 
     const {removeLetterByIndex} = useWord()
 
-    const [{ isOver }, drop] = useDrop({
+    const [drop] = useDrop({
         accept: ItemTypes.ACTIVE_LETTER,
         drop: (item) => removeLetterByIndex(item.index),
         collect: monitor => ({

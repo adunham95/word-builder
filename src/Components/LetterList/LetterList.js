@@ -6,7 +6,7 @@ import "./LetterList.scss"
 import { ActiveLetter } from '../Letter/Letter'
 import { Confetti } from '../Confetti/Confetti'
 
-export const LetterList = ({letters}) => {
+export const LetterList = () => {
 
     const {addLetterToWord, word, matchesWord} = useWord()
 
