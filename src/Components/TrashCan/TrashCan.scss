@@ -3,15 +3,36 @@
     width: 100px;
     background: red;
     margin-top: 10px;
-    &:after{
-        align-items: center;
-        content: "Trash Can";
+
+    .icon{
         display: flex;
         justify-content: center;
-        font-size: 1.2em;
-        color: white;
+        align-items: center;
         height: 100%;
-        text-transform: uppercase;
-        text-align: center;
+        color: white;  
+        svg{
+            transition: 0.2s;
+            display: block;
+            width: 50%;
+            height: 100%;
+        } 
     }
+
+    &:hover{
+        svg{
+            width: 67%;
+        }
+    }
+
+    // &:after{
+    //     align-items: center;
+    //     content: "Trash Can";
+    //     display: flex;
+    //     justify-content: center;
+    //     font-size: 1.2em;
+    //     color: white;
+    //     height: 100%;
+    //     text-transform: uppercase;
+    //     text-align: center;
+    // }
 }

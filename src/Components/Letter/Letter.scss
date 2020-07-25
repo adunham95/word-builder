@@ -11,14 +11,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid #f8dd9b;
+    &:hover{
+        border-color:darken($color: #f8dd9b, $amount: 10);
+    }
     &.dragging{
         cursor: grabbing;
     }
     &.green{
         background-color: #a5cd8b;
+        border-color: #a5cd8b;
+        &:hover{
+            border-color:darken($color: #a5cd8b, $amount: 10);
+        }
     }
     &.pink{
         background-color: #e59292;
+        border-color:#e59292;
+        &:hover{
+            border-color:darken($color: #e59292, $amount: 10);
+        }
     }
     &.white{
         background-color: white;

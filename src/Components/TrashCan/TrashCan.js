@@ -3,6 +3,7 @@ import "./TrashCan.scss"
 import { useDrop } from 'react-dnd'
 import { ItemTypes } from '../Constants'
 import useWord from '../../Functions/Hooks/useWord'
+import { Icons } from '../Icon/Icons'
 
 export const Trashcan = () => {
 
@@ -18,7 +19,7 @@ export const Trashcan = () => {
 
     return (
         <div ref={drop} className={`trashCan ${isOver?"over":""}`}>
-            
+            <Icons icon="Trash"/>
         </div>
     )
 }
