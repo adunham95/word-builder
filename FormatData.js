@@ -62,10 +62,10 @@ const  buildData = (data) => {
         if(levels.findIndex(l => l===d.level) === -1){
             levels.push(d.level);
         }
-        if(d.letter.includes("same")){
+        if(d.letter.toLowerCase().includes("same")){
             return
         }
-        else if(d.letter.includes("transparent")){
+        else if(d.letter.toLowerCase().includes("transparent")){
             return
         }
         else if(newArray.findIndex(l => l.letter === d.letter && l.color === d.color ) === -1){
