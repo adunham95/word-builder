@@ -32,6 +32,13 @@
             border-color:darken($color: #a5cd8b, $amount: 10);
         }
     }
+    &.bright.yellow{
+        background-color:#e6e624;
+        border-color:#e6e624;
+        &:hover{
+            border-color:darken($color:#e6e624, $amount: 10);
+        }
+    }
     &.pink{
         background-color: #e59292;
         border-color:#e59292;
@@ -43,5 +50,8 @@
         background-color: white;
         color: #2e2e2e;
         border-color: #2e2e2e;
+    }
+    &-active{
+        font-size: 1em;
     }
 }
