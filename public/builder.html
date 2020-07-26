@@ -15,7 +15,7 @@
       <form id="buildIframe">
           <h1>Word Board</h1>
           <label>
-              Word
+              Words <small>(Separate with commas.)</small>
               <input id="word"/>
           </label>
           <label>
@@ -70,10 +70,9 @@
       <textarea id="iframeCode"></textarea>
       <script>
           document.getElementById("buildIframe").addEventListener("submit", function(event){
-            event.preventDefault()
-            //replace('/[^a-z0-9]+/', '-', strtolower($str)), '-')
+            event.preventDefault();
             const formData = {
-                word: document.querySelector("#word").value,
+                word: document.querySelector("#word").value.replace(/ /g,""),
                 section: document.querySelector("#section").value
             };
             console.log(formData)

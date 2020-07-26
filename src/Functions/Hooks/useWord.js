@@ -7,8 +7,8 @@ const useWord = () => {
     const queryData = useQuery();
 
     function checkIfMatchesWord(array){
-        const thereWord = array.join('');
-
+        const thereWord = array.map(l=> {return l.letter}).join('');
+        console.log(thereWord);
         // console.log(queryData.word)
 
         if(typeof queryData.word === "undefined"){
@@ -17,8 +17,10 @@ const useWord = () => {
         else if(queryData.word === ""){
             return false
         }
-        else if(queryData.word.toLowerCase() === thereWord.toLowerCase()){
-            return true
+        else if(queryData.word !== ""){
+            const wordMatchArray = queryData.word.split(",");
+
+            return wordMatchArray.includes(thereWord.toLowerCase())
         }
         else{
             return false
