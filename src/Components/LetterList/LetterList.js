@@ -12,7 +12,7 @@ export const LetterList = () => {
 
     const [{ isOver }, drop] = useDrop({
         accept: ItemTypes.LETTER,
-        drop: (item) => addLetterToWord(item.letter),
+        drop: (item) => addLetterToWord(item.letter, item.className),
         collect: monitor => ({
           isOver: !!monitor.isOver(),
         }),
@@ -27,7 +27,7 @@ export const LetterList = () => {
         />
       )}
       {matchesWord && <Confetti/>}
-            {word.map((l,i) => <ActiveLetter i={i} key={`live-letter-${l}-${i}`}>{l}</ActiveLetter>)}
+            {word.map((l,i) => <ActiveLetter i={i} key={`live-letter-${l.letter}-${i}`} children={l.letter} className={l.className}/>)}
         </div>
     )
 }

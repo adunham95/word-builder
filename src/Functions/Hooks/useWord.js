@@ -38,11 +38,11 @@ const useWord = () => {
         }));
     }
 
-    function addLetterToWord(letter){
+    function addLetterToWord(letter, className){
 
         let currentWord = [...state.word]
 
-        currentWord.push(letter.replace(/-/g,"").toLowerCase())
+        currentWord.push({letter: letter.replace(/-/g,"").toLowerCase(), className})
 
         setState(state => ({
             ...state,
