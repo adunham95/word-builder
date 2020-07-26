@@ -13,7 +13,7 @@
   </head>
   <body>
       <form id="buildIframe">
-          <h1>iFrame Builder</h1>
+          <h1>Word Board</h1>
           <label>
               Word
               <input id="word"/>
@@ -64,7 +64,8 @@
                 </optgroup>
             </select>
         </label>
-          <button>Generate Code</button>
+        <button id="viewPage">View Page</button>
+          <button>Generate iFrame Code</button>
       </form>
       <textarea id="iframeCode"></textarea>
       <!-- <div style="width: 100%;">
@@ -81,6 +82,19 @@
             console.log(formData)
             document.querySelector("#iframeCode").classList.add("visible");
             document.querySelector("#iframeCode").innerText= `<div style="width: 100%;"><iframe src="https://wordboard.adriandunham.com/?word=${formData.word}&section=${formData.section}" id="WordBoard" title="Word Board" style="width: 100%;"></iframe></div>`
+        });
+
+        document.getElementById("viewPage").addEventListener("click", function(event){
+            event.preventDefault()
+            //replace('/[^a-z0-9]+/', '-', strtolower($str)), '-')
+            const formData = {
+                word: document.querySelector("#word").value,
+                section: document.querySelector("#section").value
+            };
+            console.log(formData)
+            const url = `https://wordboard.adriandunham.com/?word=${formData.word}&section=${formData.section}`;
+            var win = window.open(url, '_blank');
+            win.focus();
         });
       </script>
   </body>
