@@ -4,6 +4,8 @@ const fs = require("fs");
 const csvFilePath = "./src/Data/raw.csv";
 const jsonFilePath = "./src/Data/letters.json";
 fs.readFile(csvFilePath, "utf8", (err, data)=>{
+    console.log(`CSV Path ${csvFilePath}`)
+    console.log(`JSON Path ${jsonFilePath}`)
     // console.log(data);
 
     const jsonData = csvJSON(data);
@@ -18,6 +20,7 @@ fs.readFile(csvFilePath, "utf8", (err, data)=>{
 
 
 function csvJSON(csvText) {
+    console.log("Reading csv data")
     let lines = [];
     const linesArray = csvText.split('\n');
     // for trimming and deleting extra space 
@@ -56,11 +59,11 @@ function csvJSON(csvText) {
 }
 
 const  buildData = (data) => {
+    console.log("Building data")
     // console.log(data);
 
     let row = 0;
     let newArray = [[]];
-    let newObject = {0:[]};
     let levels = [];
     data.forEach(d => {
         d.letter = d.letter.replace(/_/g, '-')
