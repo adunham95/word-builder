@@ -8,27 +8,6 @@ import { Trashcan } from '../TrashCan/TrashCan';
 import letterData from "../../Data/letters.json"
 import { useQuery } from '../../Functions/Hooks/useQuery';
 
-function renderLetters(i, letter, className, isEnd){
-
-  if(isEnd){
-    return(
-      <>
-        <Letter key={i} className={className}>
-          {letter}
-        </Letter>
-    </>
-    )
-  }
-  else{
-    return(
-      <Letter key={i} className={className}>
-        {letter}
-    </Letter>
-    )
-  }  
-}
-
-
 export const WordBoard = () => {
 
   const query = useQuery();
