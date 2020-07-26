@@ -48,9 +48,9 @@ level,letter,color,rowEnd
 2.3,ind,green,
 2.3,old,green,
 2.3,olt,green,
-2.3,ost,green,TRUE
+2.3,ost,green,
 4.4,ive,green,
-6.4,stle,green,
+6.4,stle,green,TRUE
 1.6,s,bright yellow,
 1.6,es,bright yellow,
 3.5,ed,bright yellow,
