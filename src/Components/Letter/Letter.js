@@ -6,7 +6,7 @@ import "./Letter.scss"
 const Letter = ({children, className}) => {
 
     const [{isDragging}, drag] = useDrag({
-        item: {type: ItemTypes.LETTER, letter: children},
+        item: {type: ItemTypes.LETTER, letter: children, className},
         collect: monitor => ({
             isDragging: !!monitor.isDragging()
         })
@@ -22,18 +22,17 @@ const Letter = ({children, className}) => {
     )
 }
 
-const ActiveLetter = ({i, children}) =>{
+const ActiveLetter = ({i, children, className=""}) =>{
     const [{isDragging}, drag] = useDrag({
         item: {type: ItemTypes.ACTIVE_LETTER, index: i},
         collect: monitor => ({
             isDragging: !!monitor.isDragging()
         })
     })
-
     return (
         <span
             ref={drag}
-            className={`letter-active ${isDragging}`}
+            className={`letter letter-active ${className} ${isDragging}`}
         >
             {children}
         </span>
