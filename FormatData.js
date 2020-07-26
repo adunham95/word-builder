@@ -4,7 +4,7 @@ const fs = require("fs");
 const csvFilePath = "./src/Data/raw.csv";
 const jsonFilePath = "./src/Data/letters.json";
 fs.readFile(csvFilePath, "utf8", (err, data)=>{
-    console.log(data);
+    // console.log(data);
 
     const jsonData = csvJSON(data);
 
@@ -50,15 +50,17 @@ function csvJSON(csvText) {
         }
     })
 
-    console.log(updatedResults);
+    // console.log(updatedResults);
 
     return updatedResults;
 }
 
 const  buildData = (data) => {
-    console.log(data);
+    // console.log(data);
 
-    let newArray = [];
+    let row = 0;
+    let newArray = [[]];
+    let newObject = {0:[]};
     let levels = [];
     data.forEach(d => {
         d.letter = d.letter.replace(/_/g, '-')
@@ -72,9 +74,12 @@ const  buildData = (data) => {
             return
         }
         else if(newArray.findIndex(l => l.letter === d.letter && l.color === d.color ) === -1){
-            newArray.push(d)
+            newArray[row].push(d)
+            if(d.rowEnd){
+                row = row + 1;
+                newArray[row] = [];
+            }
         }
-
     });
 
 

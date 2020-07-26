@@ -8,19 +8,30 @@ import { Trashcan } from '../TrashCan/TrashCan';
 import letterData from "../../Data/letters.json"
 import { useQuery } from '../../Functions/Hooks/useQuery';
 
-function renderLetters(i, letter, className){
-  return(
-    <Letter key={i} className={className}>
-      {letter}
-  </Letter>
-  )
+function renderLetters(i, letter, className, isEnd){
+
+  if(isEnd){
+    return(
+      <>
+        <Letter key={i} className={className}>
+          {letter}
+        </Letter>
+    </>
+    )
+  }
+  else{
+    return(
+      <Letter key={i} className={className}>
+        {letter}
+    </Letter>
+    )
+  }  
 }
 
 
 export const WordBoard = () => {
 
   const query = useQuery();
-
 
   let maxLevel = 1.1;
   if(typeof query.section !== "undefined" && query.section !== ""){
@@ -29,17 +40,25 @@ export const WordBoard = () => {
 
   console.log("maxLevel", maxLevel)
 
-  const alphabet = letterData.filter(d => d.level < (maxLevel + 0.1))
-  const renderedAlphabet = []
+  const alphabet = letterData
 
-  for (let i = 0; i < alphabet.length; i++) {
-    renderedAlphabet.push(renderLetters(i, alphabet[i].letter, alphabet[i].color))
-}
+  console.log(alphabet);
+
 
   return (
       <DndProvider backend={HTML5Backend}>
         <div className="letterContainer">
-          {renderedAlphabet}
+          {
+            alphabet.map(r => {
+              return <div className="letterContainer-inner">
+                {
+                  r.filter(d => d.level < (maxLevel + 0.1)).map((letterData, i) => {
+                    return <Letter key={i} className={letterData.color} children={letterData.letter}/>
+                  })
+                }
+                </div>
+            })
+          }
         </div>
         <LetterList/>
         <Trashcan/>
