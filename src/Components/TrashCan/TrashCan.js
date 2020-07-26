@@ -19,7 +19,9 @@ export const Trashcan = () => {
 
     return (
         <div ref={drop} className={`trashCan ${isOver?"over":""}`}>
-            <Icons icon="Trash"/>
+            <div className="trashCan-inner">
+                <Icons icon="Trash"/>
+            </div>
         </div>
     )
 }

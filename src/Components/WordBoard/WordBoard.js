@@ -60,8 +60,10 @@ export const WordBoard = () => {
             })
           }
         </div>
-        <LetterList/>
-        <Trashcan/>
+        <div className="bottom-float">
+          <LetterList/>
+          <Trashcan/>
+        </div>
     </DndProvider>
   )
 }

@@ -8,3 +8,10 @@
         flex-wrap: wrap;
     }
 }
+
+.bottom-float{
+    margin-top: 10px;
+    position: sticky;
+    bottom: 5px;
+    display: flex;
+}
