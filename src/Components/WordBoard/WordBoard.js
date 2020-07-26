@@ -39,7 +39,7 @@ export const WordBoard = () => {
             alphabet.map(r => {
               return <div className="letterContainer-inner">
                 {
-                  r.filter(d => d.level < (maxLevel + 0.1)).map((letterData, i) => {
+                  r.filter(d => parseFloat(d.level) <= (maxLevel)).map((letterData, i) => {
                     return <Letter key={i} className={letterData.color} children={letterData.letter}/>
                   })
                 }
