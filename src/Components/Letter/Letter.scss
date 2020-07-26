@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 .letter{
-    padding: 10px;
+    padding: 5px;
     color: black;
     font-size: 2em;
     font-weight: bold;
@@ -12,8 +14,13 @@
     justify-content: center;
     align-items: center;
     border: 2px solid #f8dd9b;
+    border-radius: 7px;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 2px;
+    transition: 0.5s;
     &:hover{
-        border-color:darken($color: #f8dd9b, $amount: 10);
+        // border-color:darken($color: #f8dd9b, $amount: 10);
+        box-shadow: 0px 0px 5px #f8dd9b,;
     }
     &.dragging{
         cursor: grabbing;

@@ -1,4 +1,5 @@
 .wordDrop{
+    font-family: 'Fredoka One', cursive;
     position:relative;
     width: calc(100% - 10px);
     height: 100%;
@@ -8,8 +9,10 @@
     align-items: center;
     font-size: 2.5em;
     font-weight: bold;
-    border: 5px solid green;
+    border: 5px solid #5566fd;
     margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #5566fd;
     &-over{
         position: absolute;
         top: 0;
@@ -21,7 +24,9 @@
         background-color: yellow;
     }
     &.matchesWord{
-        background: green;
+        background: #5dd4a9;
+        border-color: #5dd4a9;
+        box-shadow: 0px 0px 15px #5dd4a9;
         overflow: hidden;
     }
     &:empty {
