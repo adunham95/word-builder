@@ -7,15 +7,22 @@ import "./WordBoard.scss"
 import { Trashcan } from '../TrashCan/TrashCan';
 import letterData from "../../Data/letters.json"
 import { useQuery } from '../../Functions/Hooks/useQuery';
+import { Banner } from '../Banner/Banner';
 
 export const WordBoard = () => {
 
   const query = useQuery();
 
   let maxLevel = 1.1;
+  let showBanner = true;
   if(typeof query.section !== "undefined" && query.section !== ""){
     maxLevel = parseFloat(query.section);
   }
+
+  if(typeof query.banner !== "undefined"){
+    showBanner = false
+  }
+
 
   console.log("maxLevel", maxLevel)
 
@@ -26,6 +33,7 @@ export const WordBoard = () => {
 
   return (
       <DndProvider backend={HTML5Backend}>
+        {showBanner ? <Banner/> : ""}
         <div className="letterContainer">
           {
             alphabet.map(r => {
