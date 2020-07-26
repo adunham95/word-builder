@@ -45,9 +45,12 @@ function csvJSON(csvText) {
         return {
             color: r.color,
             level: r.level,
-            letter: r.letter
+            letter: r.letter,
+            rowEnd: r.rowEnd?true:false
         }
     })
+
+    console.log(updatedResults);
 
     return updatedResults;
 }
