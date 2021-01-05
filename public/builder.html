@@ -72,7 +72,7 @@
           document.getElementById("buildIframe").addEventListener("submit", function(event){
             event.preventDefault();
             const formData = {
-                word: document.querySelector("#word").value.replace(/ /g,""),
+                word: document.querySelector("#word").value.replace(/ /g,"").toLowerCase(),
                 section: document.querySelector("#section").value
             };
             console.log(formData)
@@ -84,7 +84,7 @@
             event.preventDefault()
             //replace('/[^a-z0-9]+/', '-', strtolower($str)), '-')
             const formData = {
-                word: document.querySelector("#word").value,
+                word: document.querySelector("#word").value.replace(/ /g,"").toLowerCase(),
                 section: document.querySelector("#section").value
             };
             console.log(formData)
