@@ -45,10 +45,12 @@ function csvJSON(csvText) {
     }
 
     const updatedResults = result.map(r => {
+        console.log(r)
         return {
             color: r.color,
             level: r.level,
             letter: r.letter,
+            isConstOrPrefix: r.isConstPfix === 'true' ?true:false,
             rowEnd: r.rowEnd?true:false
         }
     })

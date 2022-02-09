@@ -34,18 +34,35 @@ export const WordBoard = () => {
   return (
       <DndProvider backend={HTML5Backend}>
         {showBanner ? <Banner/> : ""}
-        <div className="letterContainer">
+        <div style={{display:'flex'}}>
+        <div className="letterContainer left" style={{minWidth: 'calc(64px * 8)'}}>
           {
             alphabet.map(r => {
+              console.log(r)
               return <div className="letterContainer-inner">
                 {
-                  r.filter(d => parseFloat(d.level) <= (maxLevel)).map((letterData, i) => {
+                  r.filter(d => !d.isConstOrPrefix).filter(d => parseFloat(d.level) <= (maxLevel)).map((letterData, i) => {
                     return <Letter key={i} className={letterData.color} children={letterData.letter}/>
                   })
                 }
                 </div>
             })
           }
+        </div>
+        <div className="letterContainer right">
+        {
+            alphabet.map(r => {
+              console.log(r)
+              return <div className="letterContainer-inner">
+                {
+                  r.filter(d => d.isConstOrPrefix).filter(d => parseFloat(d.level) <= (maxLevel)).map((letterData, i) => {
+                    return <Letter key={i} className={letterData.color} children={letterData.letter}/>
+                  })
+                }
+                </div>
+            })
+          }
+        </div>
         </div>
         <div className="bottom-float">
           <LetterList/>
