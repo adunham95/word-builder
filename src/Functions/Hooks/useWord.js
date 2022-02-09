@@ -8,8 +8,6 @@ const useWord = () => {
 
     function checkIfMatchesWord(array){
         const thereWord = array.map(l=> {return l.letter}).join('');
-        console.log(thereWord);
-        // console.log(queryData.word)
 
         if(typeof queryData.word === "undefined"){
             return false

@@ -23,12 +23,7 @@ export const WordBoard = () => {
     showBanner = false
   }
 
-
-  console.log("maxLevel", maxLevel)
-
   const alphabet = letterData
-
-  console.log(alphabet);
 
 
   return (
@@ -38,7 +33,6 @@ export const WordBoard = () => {
         <div className="letterContainer left" style={{minWidth: 'calc(64px * 8)'}}>
           {
             alphabet.map(r => {
-              console.log(r)
               return <div className="letterContainer-inner">
                 {
                   r.filter(d => !d.isConstOrPrefix).filter(d => parseFloat(d.level) <= (maxLevel)).map((letterData, i) => {
@@ -52,7 +46,6 @@ export const WordBoard = () => {
         <div className="letterContainer right">
         {
             alphabet.map(r => {
-              console.log(r)
               return <div className="letterContainer-inner">
                 {
                   r.filter(d => d.isConstOrPrefix).filter(d => parseFloat(d.level) <= (maxLevel)).map((letterData, i) => {
