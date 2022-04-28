@@ -1,7 +1,5 @@
 import React from 'react'
-import Trash from './Icons/trash-alt-solid.svg'
-
-//Updated to SVG
+import Trash from './Icons/Trash'
 
 export const Icons = ({ icon }) => {
   const generateIcon = () => {
