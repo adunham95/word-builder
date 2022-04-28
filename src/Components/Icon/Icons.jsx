@@ -1,20 +1,15 @@
 import React from 'react'
-import {ReactComponent as Trash} from "./Icons/trash-alt-solid.svg"
+import Trash from './Icons/trash-alt-solid.svg'
 
-export const Icons = ({icon}) => {
-
-    const generateIcon = () => {
-        switch (icon.toLowerCase()) {
-            case 'trash':
-              return <Trash/>
-            default:
-              return ""
-          }
+export const Icons = ({ icon }) => {
+  const generateIcon = () => {
+    switch (icon.toLowerCase()) {
+      case 'trash':
+        return <Trash />
+      default:
+        return ''
     }
+  }
 
-    return (
-        <span className="icon">
-            {generateIcon()}
-        </span>
-    )
+  return <span className="icon">{generateIcon()}</span>
 }
