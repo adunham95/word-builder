@@ -1,10 +1,14 @@
 import React from 'react'
-import "./Banner.scss"
+import { Link } from 'react-router-dom'
+import './Banner.scss'
 
 export const Banner = () => {
-    return (
-        <a href={`${window.location}builder/`} className="banner">
-           <h1>Click here to choose substep</h1> 
-        </a>
-    )
+  return (
+    <Link
+      to={'/about'}
+      className=" flex bg-rose-400 p-5 text-2xl text-white justify-center mb-2"
+    >
+      <h1>Click here to choose substep</h1>
+    </Link>
+  )
 }
