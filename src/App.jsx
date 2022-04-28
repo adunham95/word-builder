@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { registerSW } from 'virtual:pwa-register'
 import './App.css'
 import { WordBoard } from './Components/WordBoard/WordBoard'
-// import { Board } from './Components/Board';
-import Home from './Pages'
 import Builder from './Pages/builder'
 
 function App() {
+  registerSW({ immediate: true })
   return (
     <div>
       <Routes>
