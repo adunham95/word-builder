@@ -7,6 +7,13 @@ import Builder from './Pages/builder'
 
 function App() {
   registerSW({ immediate: true })
+
+  const updateSW = registerSW({
+    onNeedRefresh() {},
+    onOfflineReady() {},
+  })
+
+  console.log(updateSW)
   return (
     <div>
       <Routes>
