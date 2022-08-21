@@ -82,8 +82,9 @@ const Numbers = () => {
       </div>
       <div className="flex">
         <button
-          className="rounded m-1 bg-emerald-500 whitespace-nowrap text-white p-2 px-3 font-child uppercase text-lg"
+          className="rounded m-1 bg-emerald-500 whitespace-nowrap text-white p-2 px-3 font-child uppercase text-lg disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed"
           onClick={calculate}
+          disabled={selectedLetters.length < maxLength}
         >
           Calculate
         </button>
