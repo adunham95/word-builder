@@ -10,7 +10,7 @@ const gameTypes = [
 function Builder() {
   const [section, setSection] = useState('')
   const [words, setWords] = useState('')
-  const [maxLength, setMaxLength] = useState(0)
+  const [maxLength, setMaxLength] = useState(9)
   const [useSmall, setUseSmall] = useState(false)
   const [iframeVisible, setIframeVisible] = useState(false)
   const [url, setUrl] = useState('')
