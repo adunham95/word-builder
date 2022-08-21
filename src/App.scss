@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.bottom-float{
+    position: sticky;
+    bottom: 5px;
+    display: flex;
+    margin: 10px 5px;
+}

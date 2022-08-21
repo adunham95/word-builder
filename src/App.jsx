@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { registerSW } from 'virtual:pwa-register'
-import './App.css'
-import { RealodPrompt } from './Components/ReloadPrompt/RealodPrompt'
+import './App.scss'
 import { WordBoard } from './Components/WordBoard/WordBoard'
 import Builder from './Pages/builder'
+import Letters from './Pages/letters'
 
 function App() {
   registerSW({ immediate: true })
@@ -20,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<WordBoard />} />
         <Route path="builder" element={<Builder />} />
+        <Route path="letters" element={<Letters />} />
       </Routes>
       {/* <RealodPrompt /> */}
     </div>
