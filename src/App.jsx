@@ -5,6 +5,7 @@ import './App.scss'
 import { WordBoard } from './Components/WordBoard/WordBoard'
 import Builder from './Pages/builder'
 import Letters from './Pages/letters'
+import Numbers from './Pages/numbers'
 
 function App() {
   registerSW({ immediate: true })
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<WordBoard />} />
         <Route path="builder" element={<Builder />} />
         <Route path="letters" element={<Letters />} />
+        <Route path="numbers" element={<Numbers />} />
       </Routes>
       {/* <RealodPrompt /> */}
     </div>
