@@ -21,7 +21,7 @@ function App() {
         <Route path="/" element={<WordBoard />} />
         <Route path="builder" element={<Builder />} />
       </Routes>
-      <RealodPrompt />
+      {/* <RealodPrompt /> */}
     </div>
   )
 }
