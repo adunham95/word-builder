@@ -22,8 +22,8 @@ export default defineConfig({
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       registerType: 'autoUpdate',
       manifest: {
-        name: 'Word Builder',
-        short_name: 'WordBuilder',
+        name: 'WordBoard',
+        short_name: 'WordBoard',
         description: 'Educational Resource To Build Words',
         theme_color: '#0ea47a',
         start_url: '/',
