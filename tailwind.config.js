@@ -5,6 +5,10 @@ module.exports = {
       fontFamily: {
         child: ['Fredoka One', 'cursive'],
       },
+      colors: {
+        brand: '#137dc5',
+        'brand-background': '#2d4152',
+      },
     },
   },
   plugins: [],
