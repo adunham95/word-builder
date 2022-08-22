@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const navigation = [
   { name: 'Wordboard', href: '/' },
@@ -7,6 +7,21 @@ const navigation = [
 ]
 
 export default function Header() {
+  const [isHidden, setIsHidden] = useState(false)
+
+  if (isHidden) {
+    return (
+      <div className="opacity-0 hover:opacity-100">
+        <button
+          className="block w-full bg-transparent py-2 px-4 border border-transparent rounded-md text-base font-medium text-black"
+          onClick={() => setIsHidden(!true)}
+        >
+          Unhide Nav
+        </button>
+      </div>
+    )
+  }
+
   return (
     <header className="bg-brand-background">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
@@ -103,7 +118,7 @@ export default function Header() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-base font-medium text-white hover:text-indigo-50"
+                  className="text-base font-medium text-white hover:text-brand"
                 >
                   {link.name}
                 </a>
@@ -111,6 +126,12 @@ export default function Header() {
             </div>
           </div>
           <div className="ml-10 space-x-4">
+            <button
+              className="inline-block bg-brand py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-opacity-75"
+              onClick={() => setIsHidden(true)}
+            >
+              Hide Me
+            </button>
             <a
               href="/builder"
               className="inline-block bg-rose-500 py-2 px-4 border border-transparent rounded-md text-base font-medium text-white hover:bg-rose-300"
@@ -124,7 +145,7 @@ export default function Header() {
             <a
               key={link.name}
               href={link.href}
-              className="text-base font-medium text-white hover:text-indigo-50"
+              className="text-base font-medium text-white hover:text-brand"
             >
               {link.name}
             </a>
