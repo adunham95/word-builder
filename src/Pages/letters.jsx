@@ -18,7 +18,7 @@ const Letters = () => {
   const query = useQuery()
   const { removeAllLetters } = useWord()
   const [selectedLetters, setSelectedLetters] = useState([])
-  let maxLevel = 1.1
+  let maxLevel = 10
   const maxLength = parseInt(query.maxlength) || 9
   if (typeof query.section !== 'undefined' && query.section !== '') {
     maxLevel = parseFloat(query.section)
