@@ -6,6 +6,7 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { LetterList } from '../Components/LetterList/LetterList'
 import { Trashcan } from '../Components/TrashCan/TrashCan'
+import useWord from '../Functions/Hooks/useWord'
 
 function get_random(list) {
   return list[Math.floor(Math.random() * list.length)]
@@ -15,6 +16,7 @@ const vowels = ['a', 'e', 'i', 'o', 'u']
 
 const Letters = () => {
   const query = useQuery()
+  const { removeAllLetters } = useWord()
   const [selectedLetters, setSelectedLetters] = useState([])
   let maxLevel = 1.1
   const maxLength = parseInt(query.maxlength) || 9
@@ -50,6 +52,11 @@ const Letters = () => {
     setSelectedLetters([...selectedLetters, selectedLetter])
   }
 
+  function clear() {
+    setSelectedLetters([])
+    removeAllLetters()
+  }
+
   return (
     <DndProvider backend={HTML5Backend}>
       <div>
@@ -79,7 +86,7 @@ const Letters = () => {
           </button>
           <button
             className="rounded m-1 bg-rose-500 whitespace-nowrap text-white p-2 px-3 font-child uppercase text-lg"
-            onClick={() => setSelectedLetters([])}
+            onClick={clear}
           >
             Clear Letters
           </button>
